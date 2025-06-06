@@ -25,7 +25,7 @@
 - URL 입력 후 분석 버튼 클릭시 팝업 창 띄움
 
 ### 2. 채용 공고 분석/등록 화면
-- **상단 바**: https://www.figma.com/design/t1zk9eMHS0D6XyCmLw9YBU/application-helper?node-id=6-61&t=3sbkKhKwOmKiIz4D-4
+- **상단 바**: https://www.figma.com/design/t1zk9eMHS0D6XyCmLw9YBU/application-helper?node-id=6-61&t=3sbkKhKwOmKiIz4D-4 참조
 - **PDF 내용 표시**: 회사 정보 카드 하단, 다운로드된 PDF의 내용을 미리보기로 표시
 - **이력서 업로드 영역**: PDF 상태 하단, [파일 선택] 버튼 및 드래그 앤 드롭 영역, 업로드된 파일명 표시
 - **자소서 항목 입력 영역**: 이력서 업로드 하단, [자소서 항목 추가] 버튼, 각 항목별로 [제목 입력] + [내용 입력] 필드가 세로로 배치, 여러 항목 추가 가능
@@ -33,4 +33,8 @@
 
 ### 3. 지원 내역 상세 화면
 
-- **상단 바**: https://www.figma.com/design/t1zk9eMHS0D6XyCmLw9YBU/application-helper?node-id=6-61&t=3sbkKhKwOmKiIz4D-4
+- **상단 바**: https://www.figma.com/design/t1zk9eMHS0D6XyCmLw9YBU/application-helper?node-id=6-61&t=3sbkKhKwOmKiIz4D-4 참조
+- **좌측 절반**: PDF 표시(PDF Load 되야함), 크게 보기 버튼 있어야 함
+- **우측 절반**: 
+  - 이력서 표시(PDF가 Load 되야 함), 크게 보기 버튼 있어야 함 
+  - 자소서 항목 나열, 크게 보기 버튼 있어야 함
