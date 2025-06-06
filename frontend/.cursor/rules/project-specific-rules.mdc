@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## 라우트 구조
+
+- 라우트는 @TanStack Router를 사용
+- 라우트 파일은 `route.tsx`로 명명
+- 라우트별 컴포넌트는 `-components` 디렉토리에 위치
+
+## 상태 관리
+- 전역 상태는 @zustand를 사용
+- 서버 상태는 @@tanstack/react-query를 사용

@@ -1,0 +1,85 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## 디렉토리 구조
+
+```
+src/
+├── apis/            # API 관련 파일
+├── assets/          # 정적 리소스
+├── features/        # 특정 기능별 컴포넌트 및 로직
+├── components/      # 공통 컴포넌트
+├── hooks/           # 공통 커스텀 훅
+├── stores/          # 공통 Zustand 스토어
+├── styles/          # 글로벌 스타일 및 공통 스타일
+├── utils/           # 공통 유틸리티 함수
+├── constants/       # 공통 상수 정의
+└── mocks/           # 공통 MSW 목 데이터
+├── routes/          # TanStack Router 라우트 파일들
+```
+
+## 언어 및 주석
+
+- 모든 응답은 한국어로 작성
+- 주석은 "합니다" 등을 붙이지 않고 간결한 개조식으로 작성
+- 변수명, 함수명은 영어로 작성하되 의미가 명확하게 작성
+
+## 네이밍 컨벤션
+- 컴포넌트명: PascalCase (예: `TeamCreatePage`)
+- 함수명: camelCase (예: `handleSubmit`)
+- 상수명: UPPER_SNAKE_CASE (예: `API_BASE_URL`)
+- 파일명: 컴포넌트는 PascalCase, 그 외는 kebab-case
+
+## 코드 구성
+- import 순서: 외부 라이브러리 → 내부 모듈 → 타입 import
+- 컴포넌트 내부 순서: 타입 정의 → 훅 사용 → 상태 기반 파생 상태 상수 → 이벤트 핸들러 → 렌더링
+
+## 성능 최적화
+- 컴포넌트 분리를 통한 렌더링 최적화
+
+## import 규칙
+- import는 형제/자식인 경우 상대 경로를, 아닌 경우 절대 경로를 사용
+- 절대 경로 import 시에는 `@`를 기준으로 가져옴
+- Barrel File Export를 최대한 높은 폴더에서 활용 (e.g. `@/components`를 `@/components/Button`보다 우선한다)
+- 컴포넌트, 객체 등을 export할 때는 Barrel Export (예외: `assets/images`)
+
+## React 컴포넌트 작성 규칙
+
+- React.FC는 절대 사용 금지
+- 컴포넌트는 함수 선언문으로 작성
+- Props 타입은 최대한 interface를 사용하되, type도 사용 가능
+
+## 타입 정의
+- 컴포넌트 Props 타입명은 `컴포넌트명Props` 형식으로 작성
+- API 응답 타입은 @src/apis 디렉토리의 자동 생성된 타입을 사용
+
+
+## 컴포넌트 구조
+- 공통 컴포넌트는 @src/components에 위치
+- 각 컴포넌트는 디렉토리로 분리하고 `index.ts`, `컴포넌트명.tsx`, `컴포넌트명.css.ts`로 구성
+- 기능별 컴포넌트는 @src/features에 위치
+
+## API 관리
+- API 타입은 @src/apis에 위치
+- API 호출은 @ky HTTP 클라이언트를 사용
+
+## 스타일 가이드 
+
+- 스타일은 항상 Vanilla Extract로 
+- Vanilla Extract 작성 시 값이 단일 숫자인 경우 string 대신 number를 사용
+- Vanilla Extract에서 색상 값 사용 시 src/styles/theme.css.ts 파일의 vars를 참고해 동일 색상이 있다면 해당 색상을 사용
+- Vanilla Extract에서 Font-family는 항상 Pretendard Variable 이므로 생략 가능
+- 스타일 import 시에는 항상 `import * as styles`로 import 함
+- 스타일 파일명은 항상 `컴포넌트이름.css.ts`로 함
+
+## 패키지 관리
+- 패키지 매니저: pnpm 사용
+- Node.js 버전: 20.19.0 고정 (@.node-version 참조)
+- 엄격한 엔진 버전 관리 (`engineStrict: true`)
+
+## 개발 환경
+- Vite: 빌드 도구 (@vite.config.ts 참조)
+- SWC: 트랜스파일러
+- Storybook: 컴포넌트 개발 환경
